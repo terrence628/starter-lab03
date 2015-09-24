@@ -42,9 +42,9 @@ $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 $route['sleep'] ='first/zzz';
 $route['lock/(:any)/(:any)'] = 'welcome/shucks';
-$route['show/(:num)'] = 'first/gimme';
+$route['show/(:num)'] = 'first/gimme/$1';
 $route['dunno'] = 'guess';
-$route['[a-zA-z]{4}/bingo'] = 'bingo';
+$route['[a-zA-Z]{4}/bingo'] = 'bingo';
 
 
 /* End of file routes.php */

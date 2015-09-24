@@ -56,10 +56,10 @@ class First extends Application {
     }
     
         
-    function gimme() {
+    function gimme($num) {
         $this->data['pagebody'] = 'justone';    // this is the view we want shown
         // build the list of authors, to pass on to our view
-        $source = $this->quotes->get(3);
+        $source = $this->quotes->get($num);
         
         $this->data['mug'] = $source['mug'];
         $this->data['who'] = $source['who'];
