@@ -8,7 +8,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Last extends Application {
+class Welcome extends Application {
 
 	/**
 	 * Index Page for this controller.
