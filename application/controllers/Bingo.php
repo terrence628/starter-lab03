@@ -1,40 +1,27 @@
 <?php
 
-/**
- * Our homepage. Show a table of all the author pictures. Clicking on one should show their quote.
- * Our quotes model has been autoloaded, because we use it everywhere.
- * 
- * controllers/Welcome.php
- *
- * ------------------------------------------------------------------------
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-class Welcome extends Application {
 
+
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Bingo extends Application {
+
+	/**
+	 * Index Page for this controller.
+	 */
     function __construct() {
         parent::__construct();
     }
-
-    //-------------------------------------------------------------
-    //  The normal pages
-    //-------------------------------------------------------------
-
+    
     function index() {
-        $this->data['pagebody'] = 'homepage';    // this is the view we want shown
-        // build the list of authors, to pass on to our view
-        $source = $this->quotes->all();
-        $authors = array();
-        foreach ($source as $record) {
-            $authors[] = array('who' => $record['who'], 'mug' => $record['mug'], 'href' => $record['where']);
-        }
-        $this->data['authors'] = $authors;
-
-        $this->render();
-    }
-
-        function shucks() {
         $this->data['pagebody'] = 'justone';    // this is the view we want shown
         // build the list of authors, to pass on to our view
-        $source = $this->quotes->get(2);
+        $source = $this->quotes->get(5);
         
         $this->data['mug'] = $source['mug'];
         $this->data['who'] = $source['who'];
@@ -47,8 +34,21 @@ class Welcome extends Application {
 
         $this->render();
     }
+    
+        function wisdom() {
+        $this->data['pagebody'] = 'justone';    // this is the view we want shown
+        // build the list of authors, to pass on to our view
+        $source = $this->quotes->get(6);
+        
+        $this->data['mug'] = $source['mug'];
+        $this->data['who'] = $source['who'];
+        $this->data['what'] = $source['what'];
+        /*$authors = array();
+        foreach ($source as $record) {
+            $authors[] = array('who' => $record['who'], 'mug' => $record['mug'], 'href' => $record['where']);
+        }
+        $this->data['authors'] = $authors;*/
 
+        $this->render();
+    }
 }
-
-/* End of file Welcome.php */
-/* Location: application/controllers/Welcome.php */
